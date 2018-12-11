@@ -357,13 +357,6 @@ class DemoFile extends EventEmitter {
 
       this.emit('tickend', this.currentTick);
       this.emit('end', { error: e });
-
-      // See GH #11: A sizeable proportion of demo files aren't complete.
-      // If we hit a RangeError, just silently swallow it (as the official
-      // game client does)
-      if (!(e instanceof RangeError)) {
-        throw e;
-      }
     }
   }
 
